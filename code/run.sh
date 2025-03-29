@@ -2,7 +2,7 @@
 
 #check
 if [ $# -lt 1 ]; then
-  echo "用法: $0 <inputFilename>"
+  echo "check: $0 <inputFilename>"
   exit 1
 fi
 
