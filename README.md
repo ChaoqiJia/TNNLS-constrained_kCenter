@@ -1,7 +1,9 @@
 # TNNLS-2024-P-34330: Near-Optimal Algorithms for Instance-level Constrained k-Center Clustering 
 
-  ## Data preprocessing 
-
+  ## Setup
+  'install CPLEX'
+    - pip install cplex
+    - set the file path at the _outputFilename_;
   - Following the label for the dataset, we add CL and ML constraints on the pure dataset by label (which constructs the disjoint CL & ML constraints) to be input dataset for the main algorithm.
   - The input of the program can be pure constraint sets for CL & ML.
 
@@ -18,9 +20,7 @@
     - input the parameter k: number of clusters, d: dimension, markPosition: label position
 
   ### Output [ML-CL-k-Center/code/addConstraints/OutPut.java]
-
     - set the file path at the _outputFilename_;
-
   #### Plot the output
 
   - Use the Cost, NMI, RI and runtime to calculate the agreement degree between an algorithm's clustering result and its labels. 
