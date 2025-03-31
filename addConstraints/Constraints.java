@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 /*
- *  generate the disjointed CL&ML cosntraints.
+ *  generate the disjoint (intersected) CL&ML cosntraints.
  *
  * pointList: the list of the points
  * ConstrainedPoints: the constrained points
@@ -34,11 +34,10 @@ public class Constraints {
         }
 
         // Select a subset of points based on the rate
-//        for (int i = 0; i < listSize * rate; i++) {
         for (int i = 0; i < (int) Math.ceil(listSize * rate); i++) {
-//            int random_p = random.nextInt((int) Math.ceil(listSize * rate));
-//            CPoints.add(pointList.get(random_p));
-            CPoints.add(pointList.get(i));
+//            int random_p = random.nextInt((int) Math.ceil(listSize * rate)); //(intersected)
+//            CPoints.add(pointList.get(random_p)); //(intersected)
+            CPoints.add(pointList.get(i));  //(disjoint and 5% and 10% intersected)
         }
 
         // Group the constrained points
@@ -67,6 +66,7 @@ public class Constraints {
             }
             groupNum++;
         }
+      /* //(disjoint and 5% and 10% intersected)
         double sizenum = 0;
         ArrayList<Integer> aa = new ArrayList<>();
         for (ArrayList<Integer> integerArrayList : pointListGroup) {
@@ -88,6 +88,7 @@ public class Constraints {
         for (ArrayList<Integer> integerArrayList : pointListGroup) {
             Collections.shuffle(integerArrayList,random);
         }
+        */
         // Generate the cannot-link (CL) and must-link (ML) sets
         int CLNum = 0, MLNum = 0;
 
@@ -134,7 +135,6 @@ public class Constraints {
                             mustList.add(new ArrayList<>());
                         }
                         // must-link generation
-//                        pointList.get(pointListGroup.get(i).get(index)).setMustID(MLNum);
                         pointList.get(pointListGroup.get(i).get(index)).setMustID(MLNum);
                         mustList.get(MLNum).add(pointListGroup.get(i).get(index));
                     }
