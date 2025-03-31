@@ -2,9 +2,7 @@ package OurAlg_LP;
 
 import OurAlg_impro_matching.matchinga;
 import Tools.*;
-
 import java.util.*;
-
 import static Tools.tools.distance;
 import static addConstraints.OutPut.output;
 
@@ -88,7 +86,6 @@ public class ApproxkCenter {
             R = (Rmin + Rmax) / 2.0f;
             if (R == Rmin || R == Rmax) {
                 Rmin = R = Rmax;
-//                break;
             }
             flag = true;
             centers.clear();
@@ -360,8 +357,8 @@ public class ApproxkCenter {
             pointsLeft.removeAll(repeatLeft);
             pointsRight.removeAll(repeatRight);
 
-            float inRmax = RMark[0];
-//            float inRmax = R;
+            // float inRmax = RMark[0]; //(interested)
+           float inRmax = R;
             while (pointsRight.size() > 1) {
 
                 float inRmin = 0;
@@ -372,7 +369,6 @@ public class ApproxkCenter {
                     if (inR == inRmax || inR == inRmin) {
                         inR = inRmax;
                         inRmin = inRmax;
-//                        break;
                     }
                     if (judgeCannotOnce(inR, pointsLeft, pointsRight)) {
                         inRmax = inR;
@@ -433,7 +429,7 @@ public class ApproxkCenter {
 
     private static void assignGene() {
         for (Point point : pointList) {
-//            if (point.getMustID() == -1 && point.getConID() == -1) {
+           if (point.getMustID() == -1 && point.getConID() == -1) { //(disjointed)
                 float mindistance = Float.MAX_VALUE;
                 for (int l = 0; l < centers.size(); l++) {
                     float dist = tools.distance(pointList.get(centers.get(l)), point);
@@ -442,7 +438,7 @@ public class ApproxkCenter {
                         mindistance = dist;
                     }
                 }
-//            }
+           }
         }
     }
 }
