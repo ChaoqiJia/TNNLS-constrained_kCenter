@@ -1,7 +1,5 @@
 package addConstraints;
 
-import GreedyAlg.greedy_baseline;
-import MatchingAlg.matching_baseline;
 import OurAlg_LP.ApproxkCenter;
 import OurAlg_impro_matching.Approx_improv_matching_kCenter;
 import OurAlg_greedy_matching.Approx_greedy_matching_kCenter;
@@ -31,11 +29,9 @@ public class OutPut {
         String inputFilename = args[0];
       // default outputFilename
         String[] outputFilename = {
-                "Results/" + inputFilename + "_mbl_output",
                 "Results/" + inputFilename + "_gm_output",
                 "Results/" + inputFilename + "_LP_output",
                 "Results/" + inputFilename + "_matching_output",
-                "Results/" + inputFilename + "_greedy_baseline_output",
         };
         for (int i = 0; i < 1; i++) {
             pointList_init = load_data.readMyFile(inputFilename, i); // Read input file
@@ -53,8 +49,8 @@ public class OutPut {
         Random r = new Random(42);
         outputFilename = outputFilename + ".csv";
         output(outputFilename, "percent,ratio,purity,nmi,ri,cost,whole_runtime,center_runtime,RDS_time\n");
-       RMark = getRmax1(pointList_init);
-       // System.out.println(RMark); For large datasets, it's advisable to record this value as input of RMark to save time during data processing.
+        RMark = getRmax1(pointList_init);
+        // System.out.println(RMark); For large datasets, it's advisable to record this value as input of RMark to save time during data processing.
 
         for (double constraint : c) {
             // Initialize constrained points generator
@@ -63,7 +59,7 @@ public class OutPut {
 //            output(outputFilename, "percent,ratio,purity,nmi,ri,cost,whole_runtime,center_runtime,RDS_time\n");
             // Compute maximal distance and minimal distance between any pairwise points in the pointList
 
-            // System.out.println(RMark); For5rge datasets, it's advisable to record this value as input of RMark to save time during data processing.
+            // System.out.println(RMark); For large datasets, it's advisable to record this value as input of RMark to save time during data processing.
             for (double v : c1) {
                 pointList = new ArrayList<>(pointList_init);
 
@@ -74,8 +70,6 @@ public class OutPut {
                   
                     Approx_improv_matching_kCenter ourAlg_improv_matching = new Approx_improv_matching_kCenter(pointList, constraints.cannotList, constraints.mustList, k, RMark);
                     ApproxkCenter ourAlg = new ApproxkCenter(pointList, constraints.cannotList, constraints.mustList, k, RMark);
-                    greedy_baseline greedy_baseline = new greedy_baseline(pointList, constraints.cannotList, constraints.mustList, k, RMark);
-                    matching_baseline matching_baseline = new matching_baseline(pointList, constraints.cannotList, constraints.mustList, k, RMark);
                     Approx_greedy_matching_kCenter ourAlg_matching = new Approx_greedy_matching_kCenter(pointList, constraints.cannotList, constraints.mustList, k, RMark);
 
                     // Perform random experiments and store results
@@ -92,15 +86,7 @@ public class OutPut {
                             float[] our_greedy_matching = ourAlg_matching.our_greedy_matching(r);
                             output(outputFilename, constraint + ", " + v + ", " + Arrays.toString(our_greedy_matching).replaceAll("[\\[\\] ]", "").trim() + "\n");
                             System.out.println(constraint + ", " + v + ", " + Arrays.toString(our_greedy_matching).replaceAll("[\\[\\] ]", "").trim());
-                        } else if (outputFilename.contains("greedy_baseline")) {
-                            float[] greedy_baselines = greedy_baseline.greedy(r);
-                            output(outputFilename, constraint + ", " + v + ", " + Arrays.toString(greedy_baselines).replaceAll("[\\[\\] ]", "").trim() + "\n");
-                            System.out.println(constraint + ", " + v + ", " + Arrays.toString(greedy_baselines).replaceAll("[\\[\\] ]", "").trim());
-                        } else if (outputFilename.contains("mbl")) {
-                            float[] matching_baselines = matching_baseline.matching_bl(r);
-                            output(outputFilename, constraint + ", " + v + ", " + Arrays.toString(matching_baselines).replaceAll("[\\[\\] ]", "").trim() + "\n");
-                            System.out.println(constraint + ", " + v + ", " + Arrays.toString(matching_baselines).replaceAll("[\\[\\] ]", "").trim());
-                        }
+                        } 
                     }
                 }
             }
