@@ -44,7 +44,7 @@ public class OutPut {
     }
 
     private static void runAlg(double[] c, double[] c1, String outputFilename) {
-        int count = 20; //the number of cycles we set the small dataset is 50 and the large dataset is 20
+        int count = 50; //the number of cycles we set the small dataset is 50 and the large dataset is 20
         // Iterate over different constraints
         Random r = new Random(42);
         outputFilename = outputFilename + ".csv";
