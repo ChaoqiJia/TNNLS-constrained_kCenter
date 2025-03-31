@@ -1,26 +1,29 @@
 # TNNLS-2024-P-34330: Near-Optimal Algorithms for Instance-level Constrained k-Center Clustering 
 
-  ## Setup
-  'install CPLEX'
-    - pip install cplex
-    - set the file path at the _outputFilename_;
-  - Following the label for the dataset, we add CL and ML constraints on the pure dataset by label (which constructs the disjoint CL & ML constraints) to be input dataset for the main algorithm.
-  - The input of the program can be pure constraint sets for CL & ML.
-
-  ## Run the code 
-
+  ## Dependencies
   - Java version: 17.0.1
-  - Cplex: IBM CPLEX2211 [https://www.ibm.com/products/ilog-cplex-optimization-studio](https://www.ibm.com/products/ilog-cplex-optimization-studio)
-  - Run OuPut.java for the experimental evaluation
-  - To simplify the code, we hard-code the following parameters: 
+  - CPLEX: IBM CPLEX2211 [https://www.ibm.com/products/ilog-cplex-optimization-studio](https://www.ibm.com/products/ilog-cplex-optimization-studio)
 
-   ### Input [ML-CL-k-Center/code/addConstraints/OutPut.java]
+   ## Install CPLEX
+   download CPLEX by above link
+    - pip install cplex
+    
+  ## Data sets
+  - wine
+  - cnae
+  - kdd
+  - skin
+  - wide09
+  - covertype
 
-    - set the file path at the _inputFilename_ (and the pure dataset needs to separate attribute values with commas);
-    - input the parameter k: number of clusters, d: dimension, markPosition: label position
+ ## Usage
+ > Run the main code:
 
-  ### Output [ML-CL-k-Center/code/addConstraints/OutPut.java]
-    - set the file path at the _outputFilename_;
+    chmod +x run.sh
+    ./run.sh inputFileName
+
+  - you need use the above datasets name replace the _inputFileName_.
+
   #### Plot the output
 
-  - Use the Cost, NMI, RI and runtime to calculate the agreement degree between an algorithm's clustering result and its labels. 
+  - Use the Cost, Purity, NMI, RI and runtime to calculate the agreement degree between an algorithm's clustering result and its labels. 
