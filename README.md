@@ -5,7 +5,7 @@
   - CPLEX: IBM CPLEX2211 [https://www.ibm.com/products/ilog-cplex-optimization-studio](https://www.ibm.com/products/ilog-cplex-optimization-studio)
 
    ## Install CPLEX
-   download CPLEX by above link
+   download CPLEX by the above link
    
     - pip install cplex
     
@@ -23,8 +23,8 @@
     chmod +x run.sh
     ./run.sh inputFileName
 
-  - you need use the above datasets name replace the _inputFileName_.
+  - you need to use the above dataset name to replace the _inputFileName_.
 
   #### Plot the output
 
-  - Use the Cost, Purity, NMI, RI and runtime to calculate the agreement degree between an algorithm's clustering result and its labels. 
+  -  Purity, NMI and RI calculate the degree of agreement between an algorithm's clustering result and its labels. In addition, we also report the Cost of $k$-center and runtime of our algorithms.
