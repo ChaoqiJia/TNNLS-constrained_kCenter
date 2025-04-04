@@ -31,12 +31,6 @@ public class matching2 {
                 if (pointlist.get(pointRight.get(j)).getMustID() != -1) {
                     for (int l = 0; l < mustLinks.get(pointlist.get(pointRight.get(j)).getMustID()).size(); l++) {
                         maxdist = Math.max(maxdist, distance(pointlist.get(pointLeft.get(i)), pointlist.get(mustLinks.get(pointlist.get(pointRight.get(j)).getMustID()).get(l))));
-//                        if (pointlist.get(pointLeft.get(i)).getMustID() != -1){
-//                            for (int mustID : mustLinks.get(pointlist.get(pointLeft.get(i)).getMustID())) {
-//                                float dismax = distance(pointlist.get(mustLinks.get(pointlist.get(pointRight.get(j)).getMustID()).get(l)), pointlist.get(mustID));
-//                                maxdist = (maxdist >= dismax) ? maxdist : dismax;
-//                            }
-//                        }
                     }
                 } else {
                     maxdist = distance(pointlist.get(pointLeft.get(i)), pointlist.get(pointRight.get(j)));
