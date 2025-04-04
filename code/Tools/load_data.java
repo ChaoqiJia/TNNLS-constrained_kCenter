@@ -44,7 +44,6 @@ public class load_data {
             String line;
             int i = 0;
             Set<Integer> label_numbers = new HashSet<>();
-//            Map<String, Integer> countMap = new HashMap<>();
             while ((line = br.readLine()) != null) {
                 String[] values = Arrays.stream(line.split(delimiter))
                         .map(String::trim)
@@ -59,15 +58,9 @@ public class load_data {
                 }
                 Point point = new Point(i++, positionPoint, mark, -1, -1);
                 pointList.add(point);
-//                String key = values[mark].trim();
-//                countMap.put(key, countMap.getOrDefault(key, 0) + 1);
                 label_numbers.add(mark);
             }
             OutPut.k = label_numbers.size();
-//            System.out.println("Value\tCount");
-//            for (Map.Entry<String, Integer> entry : countMap.entrySet()) {
-//                System.out.println(entry.getKey() + "\t" + entry.getValue());
-//            }
         } catch (IOException e) {
             e.printStackTrace();
         }
