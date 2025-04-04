@@ -23,7 +23,7 @@
     chmod +x run.sh
     ./run.sh inputFileName
 
-  - you need to use the above dataset name to replace the _inputFileName_.
+  - you have to use the above dataset name to replace the _inputFileName_.
 
   #### Plot the output
 
