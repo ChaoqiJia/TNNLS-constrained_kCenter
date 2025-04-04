@@ -16,8 +16,6 @@ public class Metrics {
 
         for (int i = 0; i < N; i++) {
             maxDist = Math.max(maxDist, distance(pointlist.get(i), pointlist.get(centers.get(pointlist.get(i).getClusterID()))));
-//            if (maxDist > 100.0)
-//                System.out.println(pointlist.get(i));
 
             //label and assignment
             int Pmark = pointlist.get(i).getLabel() % k;
