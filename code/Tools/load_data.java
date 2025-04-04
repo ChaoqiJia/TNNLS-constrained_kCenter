@@ -11,27 +11,27 @@ public class load_data {
     public static ArrayList<Point> readMyFile(String filePath, int index) {
 
         if (filePath.contains("wine") || filePath.contains("cnae")) {
-            filePath = "/Users/jcq/Desktop/myPaper/TNNLS/ML-CL-k-Center-main/Datasets_all/" + filePath + ".data"; // your path
+            filePath = "/Datasets/" + filePath + ".data"; 
             int markPosition = 0;
             return loadWineData(filePath, markPosition, "[,]");
         } else if (filePath.contains("skin")) {
-            filePath = "/Users/jcq/Desktop/myPaper/TNNLS/ML-CL-k-Center-main/Datasets_all/" + filePath + ".data"; // your path
+            filePath = "/Datasets/" + filePath + ".data"; 
             int markPosition = 3;
             return loadWineData(filePath, markPosition, "[\\s+]");
         } else if (filePath.contains("covertype")) {
-            filePath = "/Users/jcq/Desktop/myPaper/TNNLS/ML-CL-k-Center-main/Datasets_all/" + filePath + ".data"; // your path
+            filePath =  "/Datasets/" + filePath + ".data"; 
             int markPosition = 54;
             return loadWineData(filePath, markPosition, "[,]");
         } else if (filePath.contains("wide09")) {
-            filePath = "/Users/jcq/Desktop/myPaper/TNNLS/ML-CL-k-Center-main/Datasets_all/" + filePath + ".data"; // your path
+            filePath = "/Datasets/" + filePath + ".data"; 
             int markPosition = 21;
             return loadWineData(filePath, markPosition, "[,]");
         } else if (filePath.contains("kdd")) {
-            filePath = "/Users/jcq/Desktop/myPaper/TNNLS/ML-CL-k-Center-main/Datasets_all/" + filePath + ".data"; // your path
+            filePath =  "/Datasets/" + filePath + ".data"; 
             int markPosition = 41;
             return loadWineData(filePath, markPosition, "[,]");
         }else if (filePath.contains("simu")) {
-            filePath = "/Users/jcq/Desktop/myPaper/TNNLS/ML-CL-k-Center-main/Datasets_all/" + filePath + "/"+index+"-oriData.data"; // your path
+            filePath =  "/Datasets/" + filePath + ".data"; 
             int markPosition = 50;
             return loadWineData(filePath, markPosition, "[,]");
         }
