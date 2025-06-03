@@ -42,4 +42,4 @@
       year={2025},
       publisher={IEEE}}
  ## Contact
-   [chaoqi.jia@rmit.edu.au](chaoqi.jia@rmit.edu.au)
+   Email: Chaoqi Jia [chaoqi.jia@rmit.edu.au](chaoqi.jia@rmit.edu.au)
