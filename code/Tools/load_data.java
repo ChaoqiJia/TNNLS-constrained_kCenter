@@ -11,27 +11,27 @@ public class load_data {
     public static ArrayList<Point> readMyFile(String filePath, int index) {
 
         if (filePath.contains("wine") || filePath.contains("cnae")) {
-            filePath = "/Datasets/" + filePath + ".data"; 
+            filePath = "Datasets/" + filePath + ".data";
             int markPosition = 0;
             return loadWineData(filePath, markPosition, "[,]");
         } else if (filePath.contains("skin")) {
-            filePath = "/Datasets/" + filePath + ".data"; 
+            filePath = "Datasets/" + filePath + ".data";
             int markPosition = 3;
             return loadWineData(filePath, markPosition, "[\\s+]");
         } else if (filePath.contains("covertype")) {
-            filePath =  "/Datasets/" + filePath + ".data"; 
+            filePath =  "Datasets/" + filePath + ".data";
             int markPosition = 54;
             return loadWineData(filePath, markPosition, "[,]");
         } else if (filePath.contains("wide09")) {
-            filePath = "/Datasets/" + filePath + ".data"; 
+            filePath = "Datasets/" + filePath + ".data";
             int markPosition = 21;
             return loadWineData(filePath, markPosition, "[,]");
         } else if (filePath.contains("kdd")) {
-            filePath =  "/Datasets/" + filePath + ".data"; 
+            filePath =  "Datasets/" + filePath + ".data";
             int markPosition = 41;
             return loadWineData(filePath, markPosition, "[,]");
         }else if (filePath.contains("simu")) {
-            filePath =  "/Datasets/" + filePath + ".data"; 
+            filePath =  "Datasets/" + filePath + ".data";
             int markPosition = 50;
             return loadWineData(filePath, markPosition, "[,]");
         }
