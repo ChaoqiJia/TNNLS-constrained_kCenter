@@ -40,5 +40,6 @@
       author={Guo, Longkun and Jia, Chaoqi and Liao, Kewen and Lu, Zhigang and Xue, Minhui},
       journal={IEEE Transactions on Neural Networks and Learning Systems},
       year={2025},
-      publisher={IEEE}
-  }
+      publisher={IEEE}}
+ ## Contact
+   [chaoqi.jia@rmit.edu.au](chaoqi.jia@rmit.edu.au)
