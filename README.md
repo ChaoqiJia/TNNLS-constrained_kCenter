@@ -10,6 +10,7 @@
     - pip install cplex
     
   ## Data sets
+  Download [zip](https://drive.google.com/drive/folders/1lA6-7GxS5VwpiBIqZAZ2tfHnIBkkwG9X) file here and unzip.
   - wine
   - cnae
   - kdd
