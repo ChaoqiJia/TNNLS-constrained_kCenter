@@ -25,7 +25,8 @@ public class OutPut {
         double[] c = {0.0,0.02,0.04,0.06,0.08, 0.1}; //sub fig. a,b
       
         // double[] c = {0.05, 0.1}; //the ratio of the number of constraints to the number of points in the dataset sub fig. c,d
-        // double[] c1 = {0.0,0.5,1.0};//sub fig. c,d
+//         double[] c1 = {0.0,0.5,1.0};//sub fig. c,d
+         double[] c1 = {0.0};//set sub fig. a,b
         String inputFilename = args[0];
       // default outputFilename
         String[] outputFilename = {
